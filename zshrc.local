@@ -1,0 +1,25 @@
+RED='\033[0;31m'
+ source /opt/ros/melodic/setup.zsh
+
+autoload promptinit && promptinit
+prompt hjem 8bit
+
+echo "${RED}Logged in Users at $HOST:"
+who
+echo "${NC}" #No Color
+
+FS="/"
+THRESHOLD=90
+OUTPUT=($(LC_ALL=C df -P ${FS}))
+CURRENT=$(echo ${OUTPUT[12]} | sed 's/%//')
+[ $CURRENT -gt $THRESHOLD ] && echo "$FS file system usage $CURRENT %"
+
+
+#if not running interactively, do not do anything
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/klause/code/eross/acados/acados/lib"
+export ACADOS_SOURCE_DIR=/home/klause/code/eross/acados/acados
+
+export EDITOR='nano'

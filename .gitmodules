@@ -1,0 +1,6 @@
+[submodule "prompt-hjem"]
+	path = prompt-hjem
+	url = https://github.com/cornerman/prompt-hjem
+[submodule "progs/fzf"]
+	path = progs/fzf
+	url = https://github.com/junegunn/fzf
