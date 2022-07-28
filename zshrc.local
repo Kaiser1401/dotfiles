@@ -1,5 +1,4 @@
 RED='\033[0;31m'
- source /opt/ros/melodic/setup.zsh
 
 autoload promptinit && promptinit
 prompt hjem 8bit
@@ -19,7 +18,14 @@ CURRENT=$(echo ${OUTPUT[12]} | sed 's/%//')
 #[[ $- != *i* ]] && return
 #[[ -z "$TMUX" ]] && exec tmux
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/klause/code/eross/acados/acados/lib"
-export ACADOS_SOURCE_DIR=/home/klause/code/eross/acados/acados
-
 export EDITOR='nano'
+
+# WSL-HOST ip and X11 display settings
+export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+export export DISPLAY=$WSL_HOST:0.0
+
+# ROS
+source /opt/ros/noetic/setup.zsh
+
+# add Go to $PATH (not sure when that happened)
+export PATH=/usr/local/go/bin:$PATH
