@@ -398,3 +398,6 @@ include ~/.zaliases
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2026-06-15 13:59:12
+export PATH="$PATH:/home/klause/.local/bin"

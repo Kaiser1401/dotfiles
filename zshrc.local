@@ -26,3 +26,6 @@ export EDITOR='nano'
 
 # ROS
 # source /opt/ros/noetic/setup.zsh
+
+# ROS2
+source /opt/ros/jazzy/setup.zsh
