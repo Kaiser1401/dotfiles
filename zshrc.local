@@ -3,9 +3,9 @@ RED='\033[0;31m'
 autoload promptinit && promptinit
 prompt hjem 8bit
 
-echo "${RED}Logged in Users at $HOST:"
-who
-echo "${NC}" #No Color
+#echo "${RED}Logged in Users at $HOST:"
+#who
+#echo "${NC}" #No Color
 
 FS="/"
 THRESHOLD=90
